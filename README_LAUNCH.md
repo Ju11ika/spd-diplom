@@ -19,9 +19,14 @@ pip requirements.txt
 
 3. Создать файл .env в корне проекта и добавить настройки базы данных:
 ```
-DATABASE_URL=postgres://postgres:postgres@localhost:5432/social_network_db
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=social_network_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=127.0.0.1
+DB_PORT=5432
 ```
-Примечание: замените postgres:postgres на ваш логин:пароль от PostgreSQL
+Примечание: замените your_password на ваш пароль от PostgreSQL
 
 4. Создать базу данных PostgreSQL:
 ```
@@ -57,4 +62,4 @@ python manage.py runserver
 - **Создание постов**: авторизованные пользователи могут создавать посты с текстом и изображением
 - **Редактирование постов**: только автор может редактировать свой пост
 - **Комментирование**: авторизованные пользователи могут оставлять комментарии к постам
-- **Лайки**: авторизованные пользователи могут ставить и убирать лайки к постам 
+- **Лайки**: авторизованные пользователи могут ставить и убирать лайки к постам
