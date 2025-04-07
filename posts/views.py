@@ -33,7 +33,7 @@ class PostViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
-    @action(detail=True, methods=['post'])
+    @action(detail=True, methods=['post'], permission_classes=[permissions.IsAuthenticated])
     def add_comment(self, request, pk=None):
         post = self.get_object()
         serializer = CommentSerializer(data=request.data)
