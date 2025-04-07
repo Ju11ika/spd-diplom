@@ -9,44 +9,36 @@
 
 1. Клонировать репозиторий:
 ```
-git clone <ссылка на репозиторий>
-cd spd-diplom
+git clone git@github.com:Ju11ika/spd-diplom.git
 ```
 
-2. Создать и активировать виртуальное окружение:
+2. Установить зависимости:
 ```
-python -m venv .venv
-.venv\Scripts\activate  # для Windows
-source .venv/bin/activate  # для Linux/Mac
+pip requirements.txt
 ```
 
-3. Установить зависимости:
-```
-pip install django djangorestframework psycopg2 pillow django-environ
-```
-
-4. Создать файл .env в корне проекта и добавить настройки базы данных:
+3. Создать файл .env в корне проекта и добавить настройки базы данных:
 ```
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/social_network_db
 ```
 Примечание: замените postgres:postgres на ваш логин:пароль от PostgreSQL
 
-5. Создать базу данных PostgreSQL:
+4. Создать базу данных PostgreSQL:
 ```
 psql -U postgres -c "CREATE DATABASE social_network_db;"
 ```
 
-6. Выполнить миграции:
+5. Выполнить миграции:
 ```
 python manage.py migrate
 ```
 
-7. Создать суперпользователя для доступа к админке:
+6. Создать суперпользователя для доступа к админке:
 ```
 python manage.py createsuperuser
 ```
 
-8. Запустить сервер разработки:
+7. Запустить сервер разработки:
 ```
 python manage.py runserver
 ```
